@@ -27,8 +27,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #include <Capacitor.h>
 
 String Version = "(v1.2)";
-#define resistencia_H 10035.00F  //R alta: 10K para cargar/descargar el condensador
-#define resistencia_L 220.00F    //R baja: 240 para cargar/descargar el condensador
+#define resistencia_H 10080.00F  //R alta: 10K para cargar/descargar el condensador
+#define resistencia_L 250.00F    //R baja: 220 para cargar/descargar el condensador
 
 #define CapIN_H A1      // Medida de capacidades ALTAS + ESR (>50nF)
 #define CapOUT A2       // Punto comúm de medida
@@ -85,7 +85,7 @@ void setup() {
   //void Capacitor::Calibrate(float strayCap, float pullupRes)
   //#define STRAY_CAP (26.30);
   //#define R_PULLUP (34.80);
-  pFcap.Calibrate(41.95, 36.00);  // J_RPM: 41.95,36.00 >>> Se puede comentar esta línea, si los valores C,R son 26.30 y 34.80
+  pFcap.Calibrate(38.30, 33.15);  // J_RPM: 41.95,36.00 >>> Se puede comentar esta línea, si los valores C,R son 26.30 y 34.80
 
   pinMode(CapOUT, OUTPUT);
   pinMode(CapIN_L, OUTPUT);
